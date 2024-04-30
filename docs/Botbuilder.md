@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Bot Builder
 
-The botbuilder section of this documentation suite outlines processes related to the creation, training, deployment, and versioning of your virtual assistant. 
+This botbuilder section of this documentation suite outlines processes related to the creation, training, deployment, and versioning of your virtual assistant. 
 
 ## Create Virtual Assistant
 
