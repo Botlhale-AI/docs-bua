@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Bot Builder
 
-This botbuilder section of this documentation suite outlines processes related to the creation, training, deployment, and versioning of your virtual assistant. 
+The botbuilder section of this documentation suite outlines processes related to the creation, training, deployment, and versioning of your virtual assistant. 
 
 ## Create Virtual Assistant
 
@@ -35,6 +35,8 @@ Use the following steps to create your virtual assistant.
 
 An intent is all about the motive of a given chatbot user. It’s the goal behind each message the chatbot receives from the user. Intents categorise text based on the goal or purpose expressed in the user’s message. For example, the intent **"greetings"** enables your bot to understand when the user says **"Hi"**. This creates a simple question-answer dialogue that provides a response to messages categorised to a specific intent.
 
+### Add Intents
+
 Use the following steps to add intents to your selected chatbot.
 
 1. From the My Chatbots page, click on the `Edit` icon of the chatbot you wish to add intents to. You are directed to the Intents Manager page.
@@ -56,6 +58,17 @@ You need to provide example messages and responses for each language you selecte
 
 ![alt text](/img/image-5b.png)
 
+### Upload Intents
+
+You can upload intents to the Intents Manager page as a CSV. 
+
+1. From the Intents Manager page, click `Upload Intents`
+2. Specify the language of the intents.
+3. Select the intents file you wish to upload. Ensure the file is formatted correctly by referencing the example file.
+4. Click `Upload`.
+5. Your new intents are uploaded and appear on the Intents Manager page.
+
+### Delete Intents
 
 You can delete an intent from the Intents Manager page. Before you delete an intent, ensure it is not in use in the Dialogue Manager. If the intent you wish to delete is in use, you must first delete the dialogue using the intent before you can delete the intent.
 
@@ -195,9 +208,9 @@ Deleting an entity also deletes any example values associated with that entity. 
 
 ## Create FAQs
 
-With Botlhale's NLP Toolkit platform, you can create a collection of questions, complete with answers, that are commonly asked about your product or service. These are a useful way of improving the customer's experience and reducing support tickets.
+With Bua, you can create a collection of questions, complete with answers, that are commonly asked about your product or service. These are a useful way of improving the customer's experience and reducing support tickets.
 
-On Botlhale's platform, these FAQs work similarly to intents in that the chatbot categorises messages to a particular FAQ and returns the response associated with the selected question.
+On Bua, these FAQs work similarly to intents in that the chatbot categorises messages to a particular FAQ and returns the response associated with the selected question.
 
 Use the following steps to create one or more FAQs for your chatbot.
 
@@ -212,6 +225,15 @@ Use the following steps to create one or more FAQs for your chatbot.
 5. You are taken to a new page. Here, you can begin adding the question and response associated with this FAQ. Note that this must be added in all the languages supported by your chatbot.
 
 6. Repeat these steps for as many FAQs as needed.
+
+
+You can also create FAQs by uploading an FAQ CSV to the FAQs Manager page 
+
+1. From the FAQs Manager page, click `Upload FAQs`
+2. Specify the language of the FAQs.
+3. Select the FAQs file you wish to upload. Ensure the file is formatted correctly by referencing the example file.
+4. Click `Upload`.
+5. Your new FAQs are uploaded and appear on the FAQs Manager page.
 
 
 Once created, these FAQs can be added to your dialogue in the form of button elements via the Dialogue Manager. For more information on this, see the [Dialogue Elements](/docs/Botbuilder#create-dialogue-elements) section of this documentation.
@@ -233,47 +255,29 @@ These complex dialogues are capable of the following:
 The rich response generation capabilities of the Dialogue Manager interface need to be configured to work. This configuration happens on the `Custom Functions` page. See the [Custom Functions](/docs/Botbuilder#enable-custom-functions) section of this documentation for additional information.
 :::
 
+The Dialogue Manager interface gives you the option of creating both story-based and rule-based dialogues. Story-based dialogues allow builders to create flexible journeys which are dependent on the user's intents and responses. Rule-based dialogues allows builders to create journeys that follow a fixed path. No other journey can be triggered by the same intent that triggers the rule.
 
-The Dialogue Manager interface gives you the option of creating both custom and preset dialogues. These dialogues outline a sequence for your bot to follow during a conversation. The flow of the conversation sequence is determined by the intent put forward by the end user. Consider the example of an ecommerce bot presented with a greeting intent where the end user sends a message saying "Hello". This greeting intent could be configured to trigger a Bot button response where the ecommerce bot responds with a greeting and a series of buttons prompting the end user to select a product for purchase.
+These dialogues can either be custom or preset. Preset dialogues are pre-built conversation starters for common situations. They're easy to use but offer limited flexibility. Think of them like convenient pre-made meals. Custom dialogues let you build conversations from scratch, tailoring them to your specific needs. They require more effort but offer full control over the flow and content. Imagine them as cooking your own meal - more work, but you get exactly what you want.
 
-The following preset dialogues are available on the Dialogue Manager interface.
+Together, these dialogues outline a sequence for your bot to follow during a conversation. The flow of the conversation sequence is determined by the intent put forward by the end user. Consider the example of an ecommerce bot presented with a greeting intent where the end user sends a message saying "Hello". This greeting intent could be configured to trigger a Bot button response where the ecommerce bot responds with a greeting and a series of buttons prompting the end user to select a product for purchase.
 
-**Human handoff:** This preset dialogue option launches a conversation sequence where the end user is provided with handoff options and connected to a human agent.
+### Create Dialogues
 
-**Change language:** This preset dialogue option launches a conversation sequence where the end user is provided with the option the conversation language, and allows your chatbot to continue the conversation in the selected language.
+Use the following steps to create a story-based dialogue for your chatbot.
 
+1. On the Dialogue Manager, click `New dialogue`.
+2. A pop-up window appears, prompting you to name your dialogue and assign it a type.
 
-### Create Preset Dialogues
+![alt text](/img/.png)
 
-Use the following steps to create a preset dialogue for your chatbot.
-1. From the Dialogue Manager page, click the `New dialogue` button.
+3. Specify whether this will be a story- or rule-based dialogue.
+4. Specify whether this will be a custom or preset dialogue.
+5. If you selected preset, specify which of the preset dialogues you wish to create.
+6. If you selected custom, assign a name to your dialogue.
+7. Click `Create Dialogue`.
+8. Depending on the type selected, your newly created dialogue appears on either the Story or the Rules tab.
 
-2. A pop-up window appears, prompting you to select the dialogue type. Use the arrows to toggle between the available options.
-
-![alt text](/img/image-14b.png)
-
-3. Ensure **"Preset"** is selected as the dialogue type, and select the preset dialogue you wish to assign to your bot.
-
-4. Click the `Create dialogue` button. Your preset dialogue is created and listed on the Dialogue Manager page.
-
-:::info
-Creating a preset dialogue triggers a code update to the Custom Functions page. All the code required to action that conversation sequence when it's triggered by an intent is then available in the script found on the Custom Functions page. See the [Custom Functions](/docs/Botbuilder#enable-custom-functions) section for additional information.
-:::
-
-### Create Custom Dialogues
-
-Use the following steps to create a new custom dialogue.
-
-1. From the Dialogue Manager page, click the `New dialogue` button.
-2. A pop-up window appears, prompting you to select the dialogue type and assign it a name.
-
-![alt text](/img/image-15b.png)
-
-3. Ensure **"Custom"** is selected as the dialogue type, and enter an appropriate name for your new dialogue.
-
-4. Click the `Create dialogue` button. Your new custom dialogue is created and listed on the Dialogue Manager page.
-
-5. Now, you can begin building the conversation sequence for your dialogue by creating and adding dialogue elements. This is discussed in detail in the section that follows.
+Now, you can begin building the conversation sequence for your dialogue by creating and adding dialogue elements. This is discussed in detail in the section that follows.
 
 
 ## Create Dialogue Elements
