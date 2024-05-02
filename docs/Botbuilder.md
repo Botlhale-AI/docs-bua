@@ -268,7 +268,7 @@ Use the following steps to create a story-based dialogue for your chatbot.
 1. On the Dialogue Manager, click `New dialogue`.
 2. A pop-up window appears, prompting you to name your dialogue and assign it a type.
 
-![alt text](/img/.png)
+![alt text](/img/create-dialogues.png)
 
 3. Specify whether this will be a story- or rule-based dialogue.
 4. Specify whether this will be a custom or preset dialogue.
