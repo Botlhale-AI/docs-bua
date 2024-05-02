@@ -120,7 +120,7 @@ Use the following steps to restart an archived chat.
 
 ## Manage Contact List
 
-Bua allows you to maintain a database of your chatbot users via the Contact List page. When your chatbot executes a human handoff, the end user's name, number, and email address are extracted from the conversation and automatically logged in your organisation's contact list. This is shown in the following image.
+Bua allows you to maintain a database of your chatbot users via the Contact List page. When your chatbot interacts with a user, that end user's name and number are extracted from the conversation and automatically logged in your organisation's contact list. If the end user opts for human handoff, their email is also added to the contact list. This is shown in the following image.
 
 
 ![alt text](/img/image-7.png)
@@ -156,7 +156,7 @@ comma-separated values. If you're unsure about how to do this, download the exam
 provided in the pop-up window by clicking the Download example button.
 
 - Use the View icon to see the full details of an existing contact. You also have the option of 
-editing contact details using this icon.
+editing contact details using this icon. Admins can assign tags to users in the contact list. 
 
 - Use the Delete icon to remove an existing contact from your list. Note that this operation is 
 final and cannot be undone.
