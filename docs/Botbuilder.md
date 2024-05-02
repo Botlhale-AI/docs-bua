@@ -572,6 +572,9 @@ The Actions Dashboard also flags any errors in your code, highlighting the erron
 Adding preset or custom bot actions to your dialogue via Dialogue Manager automatically will override any previous related configuration done in the Actions Dashboard. See the section on Bot Action for more information.
 :::
 
+:::tip 
+Use the actions dashboard to control who interacts with your chatbot and what features they can access. This allows for a targeted deployment. You can limit the bot to a select group of users, essentially creating a testing pool. This way, you can refine new features with a smaller audience before rolling them out to everyone.
+:::
 
 ### Human Handoff Integration
 
