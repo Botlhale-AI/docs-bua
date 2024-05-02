@@ -28,7 +28,9 @@ do this via the dropdown menu on the top-right corner of your screen.
 3. Enter the required information and click `Deploy`. You are notified by email once the deployment has been successful.
 4. The successfully deployed bot is now listed on the Deployed Bots tab.
 
-
+:::tip 
+Use the actions dashboard to control who interacts with your chatbot and what features they can access. This allows for a targeted deployment. You can limit the bot to a select group of users, essentially creating a testing pool. This way, you can refine new features with a smaller audience before rolling them out to everyone. See the [Custom Actions](docs/Botbuilder.md#enable-custom-functions) section of this documentation for more information.
+:::
 
 Once you have deployed one or more chatbots, you can manage and test them from the `Deployed Bots` tab. This tab provides essential information about your deployed bots, including their BotID and Date Deployed.
 
