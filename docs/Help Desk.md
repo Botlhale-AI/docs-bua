@@ -38,7 +38,7 @@ SLA is an acronym which stands for Service Level Agreement. In this context, SLA
 This setting configures the maximum amount of time an agent can remain in an Away status on the platform. Configuring this setting sends periodic reminders to the agent which prompt them to return to an Online status.
 
 **Queue Auto-Replies:**\
-This setting allows you to configure automatic replies which get sent to the user as they wait in the queue. Messages configured here typically give the user periodic updates pertaining to the status of their handoff.
+This setting lets you manage automatic replies sent to users waiting in the queue. These messages provide periodic updates on the status of their handoff to a live agent. The platform includes default replies in all your bot's enabled languages, but you can also review and customize this copy to better suit your needs.
 
 :::note
 If automatic assigning is not enabled, transferred users must be manually assigned to an agent. 
