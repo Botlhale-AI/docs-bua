@@ -68,6 +68,23 @@ You can upload intents to the Intents Manager page as a CSV.
 4. Click `Upload`.
 5. Your new intents are uploaded and appear on the Intents Manager page.
 
+### Generate Intent Examples
+
+Once an intent is created, you have the option of automatically generating examples of user messages that trigger this intent. Use the following steps to do so:
+
+1. From the Intents Manager page, click on the `View` icon next to the intent for which you wish to generate examples.
+2. In the new page you are taken to, click on the `Generate` button.
+3. In the pop-up window that appears, enter an example sentence and specify the number of sentences you would like generated.
+
+![alt text](/img/genereate-intents.png)
+
+4. Click `Generate`.
+5. Your newly generated intent examples appear under the User Says tab.
+
+:::tip
+You also have the option of auto-generating translations for your intents. To do so, simply click the `Translate` button and select your target language. The auto-generated translations appear in the tab corresponding to your target language. This generated translation is fully editable.
+:::
+
 ### Delete Intents
 
 You can delete an intent from the Intents Manager page. Before you delete an intent, ensure it is not in use in the Dialogue Manager. If the intent you wish to delete is in use, you must first delete the dialogue using the intent before you can delete the intent.
@@ -238,6 +255,10 @@ You can also create FAQs by uploading an FAQ CSV to the FAQs Manager page
 
 Once created, these FAQs can be added to your dialogue in the form of button elements via the Dialogue Manager. For more information on this, see the [Dialogue Elements](/docs/Botbuilder#create-dialogue-elements) section of this documentation.
 
+:::tip
+You also have the option of auto-generating translations for your FAQs. To do so, simply click the `Translate` button and select your target language. The auto-generated translations appear in the tab corresponding to your target language. This generated translation is fully editable.
+:::
+
 
 ## Manage Dialogues
 
@@ -268,7 +289,7 @@ Use the following steps to create a story-based dialogue for your chatbot.
 1. On the Dialogue Manager, click `New dialogue`.
 2. A pop-up window appears, prompting you to name your dialogue and assign it a type.
 
-![alt text](/img/.png)
+![alt text](/img/create-dialogues.png)
 
 3. Specify whether this will be a story- or rule-based dialogue.
 4. Specify whether this will be a custom or preset dialogue.
@@ -551,6 +572,9 @@ The Actions Dashboard also flags any errors in your code, highlighting the erron
 Adding preset or custom bot actions to your dialogue via Dialogue Manager automatically will override any previous related configuration done in the Actions Dashboard. See the section on Bot Action for more information.
 :::
 
+:::tip 
+Use the actions dashboard to control who interacts with your chatbot and what features they can access. This allows for a targeted deployment. You can limit the bot to a select group of users, essentially creating a testing pool. This way, you can refine new features with a smaller audience before rolling them out to everyone.
+:::
 
 ### Human Handoff Integration
 

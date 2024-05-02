@@ -38,7 +38,7 @@ SLA is an acronym which stands for Service Level Agreement. In this context, SLA
 This setting configures the maximum amount of time an agent can remain in an Away status on the platform. Configuring this setting sends periodic reminders to the agent which prompt them to return to an Online status.
 
 **Queue Auto-Replies:**\
-This setting allows you to configure automatic replies which get sent to the user as they wait in the queue. Messages configured here typically give the user periodic updates pertaining to the status of their handoff.
+This setting lets you manage automatic replies sent to users waiting in the queue. These messages provide periodic updates on the status of their handoff to a live agent. The platform includes default replies in all your bot's enabled languages, but you can also review and customize this copy to better suit your needs.
 
 :::note
 If automatic assigning is not enabled, transferred users must be manually assigned to an agent. 
@@ -120,7 +120,7 @@ Use the following steps to restart an archived chat.
 
 ## Manage Contact List
 
-Bua allows you to maintain a database of your chatbot users via the Contact List page. When your chatbot executes a human handoff, the end user's name, number, and email address are extracted from the conversation and automatically logged in your organisation's contact list. This is shown in the following image.
+Bua allows you to maintain a database of your chatbot users via the Contact List page. When your chatbot interacts with a user, that end user's name and number are extracted from the conversation and automatically logged in your organisation's contact list. If the end user opts for human handoff, their email is also added to the contact list. This is shown in the following image.
 
 
 ![alt text](/img/image-7.png)
@@ -156,7 +156,7 @@ comma-separated values. If you're unsure about how to do this, download the exam
 provided in the pop-up window by clicking the Download example button.
 
 - Use the View icon to see the full details of an existing contact. You also have the option of 
-editing contact details using this icon.
+editing contact details using this icon. Admins can assign tags to users in the contact list. 
 
 - Use the Delete icon to remove an existing contact from your list. Note that this operation is 
 final and cannot be undone.
