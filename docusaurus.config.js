@@ -11,14 +11,15 @@ const config = {
 
   title: 'Bua',
   // tagline: "The Botlhale NLP Toolkit",
-  url: 'https://murggar.github.io',
+  url: 'https://docs-bua.github.io',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/ficon.png',
-  organizationName: 'murggar', // Usually your GitHub org/user name.
-  projectName: 'murggar.github.io', // Usually your repo name.
+  organizationName: 'Botlhale-AI', // Usually your GitHub org/user name.
+  projectName: 'docs-bua.github.io', // Usually your repo name.
   deploymentBranch: 'main', 
+  trailingSlash: false,
 
   presets: [
     [
