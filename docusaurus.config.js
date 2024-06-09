@@ -19,7 +19,7 @@ const config = {
   organizationName: 'Botlhale-AI', // Usually your GitHub org/user name.
   projectName: 'docs-bua', // Usually your repo name.
   deploymentBranch: 'gh-pages', 
-  // trailingSlash: false,
+  trailingSlash: false,
 
   presets: [
     [
