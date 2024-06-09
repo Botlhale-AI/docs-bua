@@ -18,7 +18,7 @@ const config = {
   favicon: 'img/ficon.png',
   organizationName: 'Botlhale-AI', // Usually your GitHub org/user name.
   projectName: 'docs-bua.github.io', // Usually your repo name.
-  deploymentBranch: 'main', 
+  deploymentBranch: 'gh-pages', 
   // trailingSlash: false,
 
   presets: [
