@@ -11,7 +11,7 @@ const config = {
 
   title: 'Bua',
   // tagline: "The Botlhale NLP Toolkit",
-  url: 'https://docs-bua.github.io',
+  url: 'https://botlhale-ai.github.io/docs-bua/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
