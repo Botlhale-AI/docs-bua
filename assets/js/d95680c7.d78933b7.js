@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmurggar_github_io=self.webpackChunkmurggar_github_io||[]).push([[509],{7576:a=>{a.exports=JSON.parse('{"label":"facebook","permalink":"/docs-bua/blog/tags/facebook","allTagsPath":"/docs-bua/blog/tags","count":1,"unlisted":false}')}}]);
