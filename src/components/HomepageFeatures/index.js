@@ -98,6 +98,7 @@ const ytVideos = [
   },
 ];
 
+
 function Feature({ title, link, description }) {
   return (
     <>
@@ -135,12 +136,12 @@ export default function HomepageFeatures() {
         </div>
       </section>
       
-      {/* <Heading as="h2" className={styles.marg}>Bua Tutorial Videos</Heading>
+      <Heading as="h2" className={styles.textheading}>Bua Tutorial Videos</Heading>
       <div className="row">
         {ytVideos.map((props, idx) => (
           <YoutubeVideo key={idx} {...props} />
         ))}
-      </div> */}
+      </div>
     </div>
   );
 }
