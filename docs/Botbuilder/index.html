@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-Botbuilder" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.2.0">
+<title data-rh="true">Bot Builder | Bua</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://botlhale-ai.github.io/img/ficon.png"><meta data-rh="true" name="twitter:image" content="https://botlhale-ai.github.io/img/ficon.png"><meta data-rh="true" property="og:url" content="https://botlhale-ai.github.io/docs/Botbuilder"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Bot Builder | Bua"><meta data-rh="true" name="description" content="The botbuilder section of this documentation suite outlines processes related to the creation, training, deployment, and versioning of your virtual assistant."><meta data-rh="true" property="og:description" content="The botbuilder section of this documentation suite outlines processes related to the creation, training, deployment, and versioning of your virtual assistant."><link data-rh="true" rel="icon" href="/img/ficon.png"><link data-rh="true" rel="canonical" href="https://botlhale-ai.github.io/docs/Botbuilder"><link data-rh="true" rel="alternate" href="https://botlhale-ai.github.io/docs/Botbuilder" hreflang="en"><link data-rh="true" rel="alternate" href="https://botlhale-ai.github.io/docs/Botbuilder" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Bua RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Bua Atom Feed"><link rel="stylesheet" href="/assets/css/styles.1c748063.css">
+<script src="/assets/js/runtime~main.89a9fdd4.js" defer="defer"></script>
+<script src="/assets/js/main.49c5e63a.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/ficon.png" alt="Botlhale AI Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/ficon.png" alt="Botlhale AI Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Bua</b></a></div><div class="navbar__items navbar__items--right"><a class="navbar__item navbar__link" href="/">
+              <img src="/img/logo.png" alt="Botlhale AI Logo" class="navbar-logo-custom" style="height: 2rem; margin-right: 1rem; filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.75));"></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="Switch between dark and light mode (currently light mode)" aria-label="Switch between dark and light mode (currently light mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/Botbuilder">Bot Builder</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/Live Bots">Live Bots</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/Help Desk">Help Desk</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/Settings">Settings</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Bot Builder</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><h1>Bot Builder</h1>
+<p>The botbuilder section of this documentation suite outlines processes related to the creation, training, deployment, and versioning of your virtual assistant.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-virtual-assistant">Create Virtual Assistant<a href="#create-virtual-assistant" class="hash-link" aria-label="Direct link to Create Virtual Assistant" title="Direct link to Create Virtual Assistant">​</a></h2>
+<p>Once you have successfully logged in to the Bua site and selected your organisation, you can begin creating your chatbot.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Only users with admin and botbuilder permissions are able to create bots on this platform.</p></div></div>
+<p>Use the following steps to create your virtual assistant.</p>
+<ol>
+<li>Click on the <code>CREATE BOT</code> button as shown in the following image.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-30b-e27334e52e8729e1dbfa04f13687cd8e.png" width="1382" height="494" class="img_ev3q"></p>
+<ol start="2">
+<li>A pop-up window appears, prompting you to name your new bot and select one or more languages the bot will support. Fill in the required fields and click <code>CREATE BOT</code>.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/imageb-6f7a65401515f43e05d8442402ca3811.png" width="1176" height="696" class="img_ev3q"></p>
+<ol start="3">
+<li>The newly created bot is added to the My Chatbots list on the dashboard. You can toggle between different bots by clicking the Chatbot dropdown menu in the top right-hand corner of the page as seen in the bordered portion of the following image.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-1b-7f1ef8eff78a9f24e977aed0fa23e509.png" width="1798" height="619" class="img_ev3q"></p>
+<ol start="4">
+<li>Once the bot has been created, click on the <code>Edit</code> icon to add the Bot builder parameters such as Intents, Entities, and Dialogue. These are discussed in detail in the sections that follow.</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="manage-intents">Manage Intents<a href="#manage-intents" class="hash-link" aria-label="Direct link to Manage Intents" title="Direct link to Manage Intents">​</a></h2>
+<p>An intent is all about the motive of a given chatbot user. It’s the goal behind each message the chatbot receives from the user. Intents categorise text based on the goal or purpose expressed in the user’s message. For example, the intent <strong>&quot;greetings&quot;</strong> enables your bot to understand when the user says <strong>&quot;Hi&quot;</strong>. This creates a simple question-answer dialogue that provides a response to messages categorised to a specific intent.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="add-intents">Add Intents<a href="#add-intents" class="hash-link" aria-label="Direct link to Add Intents" title="Direct link to Add Intents">​</a></h3>
+<p>Use the following steps to add intents to your selected chatbot.</p>
+<ol>
+<li>
+<p>From the My Chatbots page, click on the <code>Edit</code> icon of the chatbot you wish to add intents to. You are directed to the Intents Manager page.</p>
+</li>
+<li>
+<p>Click the <code>New Intent</code> button.</p>
+</li>
+<li>
+<p>A pop-up window appears, prompting you to enter an intent name. Fill in the required field, and click <code>Create Intent</code>.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-2b-e460013836c4cb1a08ed6727fac70206.png" width="1336" height="689" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-4b-304f4b5130f95ce82448fd538a20b964.png" width="1332" height="1136" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You need to provide example messages and responses for each language you selected when creating your chatbot. This is because on the backend, an intent classifier is trained for each language. A pre-trained language model for each intent classifier is used to create embeddings for the classifier to train accurately with fewer example messages. To toggle between predefined languages, select the desired language from the drop-down list of the language tab.</p></div></div>
+<ol start="3">
+<li>Once you have provided a list of example messages and possible responses in your various predefined languages, click the <code>Save</code> button to save the created intents of your bot.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-5b-52a8b8be9d90ffec984f69ed4409610e.png" width="1826" height="538" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="upload-intents">Upload Intents<a href="#upload-intents" class="hash-link" aria-label="Direct link to Upload Intents" title="Direct link to Upload Intents">​</a></h3>
+<p>You can upload intents to the Intents Manager page as a CSV.</p>
+<ol>
+<li>From the Intents Manager page, click <code>Upload Intents</code></li>
+<li>Specify the language of the intents.</li>
+<li>Select the intents file you wish to upload. Ensure the file is formatted correctly by referencing the example file.</li>
+<li>Click <code>Upload</code>.</li>
+<li>Your new intents are uploaded and appear on the Intents Manager page.</li>
+</ol>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="generate-intent-examples">Generate Intent Examples<a href="#generate-intent-examples" class="hash-link" aria-label="Direct link to Generate Intent Examples" title="Direct link to Generate Intent Examples">​</a></h3>
+<p>Once an intent is created, you have the option of automatically generating examples of user messages that trigger this intent. Use the following steps to do so:</p>
+<ol>
+<li>From the Intents Manager page, click on the <code>View</code> icon next to the intent for which you wish to generate examples.</li>
+<li>In the new page you are taken to, click on the <code>Generate</code> button.</li>
+<li>In the pop-up window that appears, enter an example sentence and specify the number of sentences you would like generated.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/genereate-intents-57d36d201c2c6cb97e30470e1e4f4749.png" width="1190" height="708" class="img_ev3q"></p>
+<ol start="4">
+<li>Click <code>Generate</code>.</li>
+<li>Your newly generated intent examples appear under the User Says tab.</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You also have the option of auto-generating translations for your intents. To do so, simply click the <code>Translate</code> button and select your target language. The auto-generated translations appear in the tab corresponding to your target language. This generated translation is fully editable.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="delete-intents">Delete Intents<a href="#delete-intents" class="hash-link" aria-label="Direct link to Delete Intents" title="Direct link to Delete Intents">​</a></h3>
+<p>You can delete an intent from the Intents Manager page. Before you delete an intent, ensure it is not in use in the Dialogue Manager. If the intent you wish to delete is in use, you must first delete the dialogue using the intent before you can delete the intent.</p>
+<p>Use the following steps to delete an intent.</p>
+<ol>
+<li>
+<p>From the Intents Manager page, click on the <code>Delete</code> icon corresponding to the intent you wish to remove.</p>
+</li>
+<li>
+<p>A pop-up window appears, prompting you to confirm this action by clicking the <code>Delete Intent</code> button.</p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-danger admonition_xJq3 alert alert--danger"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M5.05.31c.81 2.17.41 3.38-.52 4.31C3.55 5.67 1.98 6.45.9 7.98c-1.45 2.05-1.7 6.53 3.53 7.7-2.2-1.16-2.67-4.52-.3-6.61-.61 2.03.53 3.33 1.94 2.86 1.39-.47 2.3.53 2.27 1.67-.02.78-.31 1.44-1.13 1.81 3.42-.59 4.78-3.42 4.78-5.56 0-2.84-2.53-3.22-1.25-5.61-1.52.13-2.03 1.13-1.89 2.75.09 1.08-1.02 1.8-1.86 1.33-.67-.41-.66-1.19-.06-1.78C8.18 5.31 8.68 2.45 5.05.32L5.03.3l.02.01z"></path></svg></span>danger</div><div class="admonitionContent_BuS1"><p>Deleting an intent permanently deletes any example values associated with that intent. This cannot be restored.</p></div></div>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Only users with admin and botbuilder permissions are able to create bots on this platform.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="manage-entities">Manage Entities<a href="#manage-entities" class="hash-link" aria-label="Direct link to Manage Entities" title="Direct link to Manage Entities">​</a></h2>
+<p>Entities are words or phrases that are relevant for a particular conversation. They can be names of people, organizations, cities, products, brands, and so on. These entities are usually extracted from the sentence to use later on for an API-call, product recommendation, or to redirect a message to the right flow.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-entities">Create Entities<a href="#create-entities" class="hash-link" aria-label="Direct link to Create Entities" title="Direct link to Create Entities">​</a></h3>
+<p>Use the following steps to create a custom entity.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Only users with admin and botbuilder permissions are able to create bots on this platform.</p></div></div>
+<ol>
+<li>From the Entities Manager page, click on the <code>New Entity</code> button.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-6b-1d4980442a5d9751040fb1213b69fed1.png" width="1692" height="400" class="img_ev3q"></p>
+<ol start="2">
+<li>A pop-up window appears prompting you to select the entity type and name your new entity.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-7b-cc68b84495b1d884c47fa12335a647f6.png" width="1656" height="784" class="img_ev3q"></p>
+<ol start="3">
+<li>
+<p>Fill in the required fields and click the <code>Create Entity</code> button. Your new entity appears on the Entities Manager page upon creation.</p>
+</li>
+<li>
+<p>Click the <code>Edit</code> icon next to your newly created entity. You are directed to a page where you can add entity examples and roles.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-8b-68ead773b39e2671fba6647f0268ee70.png" width="1792" height="501" class="img_ev3q"></p>
+<ol start="5">
+<li>
+<p>To add an entity example, ensure the Entity examples tab is selected and click the <code>New entity example</code> button.</p>
+</li>
+<li>
+<p>A pop-up window appears, prompting you to enter an example for your entity.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-9b-679a25892a672a8edb437bcaba4b66c2.png" width="1822" height="568" class="img_ev3q"></p>
+<ol start="7">
+<li>
+<p>Fill in the required information and click <code>Create entity example</code>.</p>
+</li>
+<li>
+<p>You entity example is created. You can add synonyms by clicking the <code>Edit</code> icon next to the newly created entity.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-10b-5c5f9f30a1e5e6eb6162dac8fa6689ce.png" width="1898" height="466" class="img_ev3q"></p>
+<ol start="9">
+<li>Add as many synonyms as you need. When you are done, click the <code>Save</code> button to retain your changes.</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Toggle between languages using the arrows on the language tab to add entity examples for each relevant language.</p></div></div>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>Entity roles are classifications added to an entity to help your bot with disambiguation. Consider the entity <strong>&quot;place&quot;</strong> in an ecommerce chatbot. Here the chatbot may need to differentiate between the **&quot;place&quot; **for delivery, billing, or collection. Adding these roles (delivery, billing, collection) to the entity allows the bot to appropriately classify the information it receives in the forms it sends out.</p></div></div>
+<ol start="10">
+<li>
+<p>To add an entity role, ensure the Entity roles tab is selected and click the <code>New entity role</code> button.</p>
+</li>
+<li>
+<p>A pop-up window appears, prompting you to enter a role for your entity.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-11b-29868b17fdeb988a1872ba0f2b55d8e7.png" width="1686" height="516" class="img_ev3q"></p>
+<ol start="12">
+<li>
+<p>Fill in the required information and click <code>Create entity role</code>. Repeat the process again to add as many roles as needed.</p>
+</li>
+<li>
+<p>Your entity roles are created and they appear in a list on the <code>Entity roles</code> tab.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-12b-526c1afb95bbf5186f2a5b710e104858.png" width="1676" height="1068" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You have the option of using a pre-trained entity instead of a custom one. Pre-trained variables do not require examples and the available ones can be selected from a dropdown list. The list of pre-trained variables is as follows:</p></div></div>
+<ul>
+<li>Time</li>
+<li>Duration</li>
+<li>Email</li>
+<li>Distance</li>
+<li>Phone number</li>
+<li>Volume</li>
+<li>Url</li>
+<li>Temperature</li>
+<li>Quantity</li>
+<li>Number</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="tag-entities">Tag Entities<a href="#tag-entities" class="hash-link" aria-label="Direct link to Tag Entities" title="Direct link to Tag Entities">​</a></h3>
+<p>The Intent Manager allows you to tag entities to your example intent messages.</p>
+<p>To tag an entity, use the following steps.</p>
+<ol>
+<li>
+<p>From the Intents Manager page, find the intent which you want to tag.</p>
+</li>
+<li>
+<p>Highlight that intent using your cursor.</p>
+</li>
+<li>
+<p>A pop-up window appears, prompting you to assign an entity to the intent as seen in the following image.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-13b-0601ec28431cd9291139d7c928adce52.png" width="2000" height="780" class="img_ev3q"></p>
+<ol start="4">
+<li>
+<p>Select the appropriate entity for your intent, and assign it a role, if necessary.</p>
+</li>
+<li>
+<p>Click <code>Save</code> to retain your changes.</p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>For detailed information on Intents, see the Intents section of the Botlhale AI NLP Toolkit Documentation.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="delete-entities">Delete Entities<a href="#delete-entities" class="hash-link" aria-label="Direct link to Delete Entities" title="Direct link to Delete Entities">​</a></h3>
+<p>Use the following steps to delete an entity.</p>
+<ol>
+<li>On the Entities Manager page, locate the entity you wish to delete.</li>
+<li>Click the <code>Delete</code> icon that corresponds to the entity you wish to delete.</li>
+<li>A pop-up window appears prompting you to confirm this action. Click the <code>Delete Entity</code> button to finalise the deletion.</li>
+</ol>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Deleting an entity also deletes any example values associated with that entity. Deleted content cannot be restored.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-faqs">Create FAQs<a href="#create-faqs" class="hash-link" aria-label="Direct link to Create FAQs" title="Direct link to Create FAQs">​</a></h2>
+<p>With Bua, you can create a collection of questions, complete with answers, that are commonly asked about your product or service. These are a useful way of improving the customer&#x27;s experience and reducing support tickets.</p>
+<p>On Bua, these FAQs work similarly to intents in that the chatbot categorises messages to a particular FAQ and returns the response associated with the selected question.</p>
+<p>Use the following steps to create one or more FAQs for your chatbot.</p>
+<ol>
+<li>
+<p>From the FAQs Manager page of the platform, click the <code>+New FAQ</code> button.</p>
+</li>
+<li>
+<p>A pop-up window appears, prompting you to assign a name to your new FAQ.</p>
+</li>
+<li>
+<p>Enter your desired name and click <code>Create FAQ</code>.</p>
+</li>
+<li>
+<p>Click on the <code>Edit</code> icon next to your newly created FAQ.</p>
+</li>
+<li>
+<p>You are taken to a new page. Here, you can begin adding the question and response associated with this FAQ. Note that this must be added in all the languages supported by your chatbot.</p>
+</li>
+<li>
+<p>Repeat these steps for as many FAQs as needed.</p>
+</li>
+</ol>
+<p>You can also create FAQs by uploading an FAQ CSV to the FAQs Manager page</p>
+<ol>
+<li>From the FAQs Manager page, click <code>Upload FAQs</code></li>
+<li>Specify the language of the FAQs.</li>
+<li>Select the FAQs file you wish to upload. Ensure the file is formatted correctly by referencing the example file.</li>
+<li>Click <code>Upload</code>.</li>
+<li>Your new FAQs are uploaded and appear on the FAQs Manager page.</li>
+</ol>
+<p>Once created, these FAQs can be added to your dialogue in the form of button elements via the Dialogue Manager. For more information on this, see the <a href="/docs/Botbuilder#create-dialogue-elements">Dialogue Elements</a> section of this documentation.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You also have the option of auto-generating translations for your FAQs. To do so, simply click the <code>Translate</code> button and select your target language. The auto-generated translations appear in the tab corresponding to your target language. This generated translation is fully editable.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="manage-dialogues">Manage Dialogues<a href="#manage-dialogues" class="hash-link" aria-label="Direct link to Manage Dialogues" title="Direct link to Manage Dialogues">​</a></h2>
+<p>The Dialogue Manager is a conversation management interface which allows you to create more complex dialogues with your bot.</p>
+<p>These complex dialogues are capable of the following:</p>
+<ul>
+<li>Sending multiple responses following an intent.</li>
+<li>Hitting APIs which return plain-text responses to the end user.</li>
+<li>Using buttons as quick responses.</li>
+<li>Collecting information from the user.</li>
+<li>Generating rich responses in the form of images, PDFs, Word documents, and so on.</li>
+</ul>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>The rich response generation capabilities of the Dialogue Manager interface need to be configured to work. This configuration happens on the <code>Custom Functions</code> page. See the <a href="/docs/Botbuilder#enable-custom-functions">Custom Functions</a> section of this documentation for additional information.</p></div></div>
+<p>The Dialogue Manager interface gives you the option of creating both story-based and rule-based dialogues. Story-based dialogues allow builders to create flexible journeys which are dependent on the user&#x27;s intents and responses. Rule-based dialogues allows builders to create journeys that follow a fixed path. No other journey can be triggered by the same intent that triggers the rule.</p>
+<p>These dialogues can either be custom or preset. Preset dialogues are pre-built conversation starters for common situations. They&#x27;re easy to use but offer limited flexibility. Think of them like convenient pre-made meals. Custom dialogues let you build conversations from scratch, tailoring them to your specific needs. They require more effort but offer full control over the flow and content. Imagine them as cooking your own meal - more work, but you get exactly what you want.</p>
+<p>Together, these dialogues outline a sequence for your bot to follow during a conversation. The flow of the conversation sequence is determined by the intent put forward by the end user. Consider the example of an ecommerce bot presented with a greeting intent where the end user sends a message saying &quot;Hello&quot;. This greeting intent could be configured to trigger a Bot button response where the ecommerce bot responds with a greeting and a series of buttons prompting the end user to select a product for purchase.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="create-dialogues">Create Dialogues<a href="#create-dialogues" class="hash-link" aria-label="Direct link to Create Dialogues" title="Direct link to Create Dialogues">​</a></h3>
+<p>Use the following steps to create a story-based dialogue for your chatbot.</p>
+<ol>
+<li>On the Dialogue Manager, click <code>New dialogue</code>.</li>
+<li>A pop-up window appears, prompting you to name your dialogue and assign it a type.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/create-dialogues-1761a64e466ef80243ad451f33a4c7da.png" width="1186" height="680" class="img_ev3q"></p>
+<ol start="3">
+<li>Specify whether this will be a story- or rule-based dialogue.</li>
+<li>Specify whether this will be a custom or preset dialogue.</li>
+<li>If you selected preset, specify which of the preset dialogues you wish to create.</li>
+<li>If you selected custom, assign a name to your dialogue.</li>
+<li>Click <code>Create Dialogue</code>.</li>
+<li>Depending on the type selected, your newly created dialogue appears on either the Story or the Rules tab.</li>
+</ol>
+<p>Now, you can begin building the conversation sequence for your dialogue by creating and adding dialogue elements. This is discussed in detail in the section that follows.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="create-dialogue-elements">Create Dialogue Elements<a href="#create-dialogue-elements" class="hash-link" aria-label="Direct link to Create Dialogue Elements" title="Direct link to Create Dialogue Elements">​</a></h2>
+<p>As mentioned in the previous section, dialogues outline a script for your chatbot to follow during a conversation. The flow of the conversation sequence is determined by the intent put forward by the end user. Dialogue elements constitute the building blocks for the continuation of this conversation flow. Dialogue elements allow for multiple response types following an intent. These element types include bot text responses, actions, and buttons.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bot-response">Bot Response<a href="#bot-response" class="hash-link" aria-label="Direct link to Bot Response" title="Direct link to Bot Response">​</a></h3>
+<p>A bot response is the free-form text response that the bot returns during the dialogue. With this element type, you have the option of creating a new response or using an existing one. In addition to this, you have the option of using the response examples from an existing intent to create this type of dialogue element.</p>
+<ol>
+<li>From the Dialogue Manager page, create a new custom dialogue. See the <a href="/docs/Botbuilder#manage-dialogues">Dialogue Manager</a> section of this documentation for information on how to go about this.</li>
+<li>Click the <code>Edit</code> icon that corresponds to your newly created custom dialogue.</li>
+<li>You are taken to a new page, illustrated in the image that follows.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-16b-10a752a3b85ec04409cadd7f41f8f41a.png" width="1960" height="418" class="img_ev3q"></p>
+<ol start="4">
+<li>
+<p>Click the <code>New dialogue element</code> button.</p>
+</li>
+<li>
+<p>A pop-up window, illustrated in the image that follows, appears, prompting you to choose a name and type for your new element.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-17b-110da3771376eb992b176f740ed3ea91.png" width="1176" height="728" class="img_ev3q"></p>
+<ol start="6">
+<li>
+<p>All dialogues must begin with an intent. So, first set the type to User Intent and either create a new intent element or select an existing intent from the drop-down menu.</p>
+</li>
+<li>
+<p>Click either the <code>Create element</code> or the <code>Select existing</code> button based on the field you filled.</p>
+</li>
+<li>
+<p>Your Bot Response element is created and appears on the page. Click <code>Save</code> to retain your changes.</p>
+</li>
+<li>
+<p>Repeat steps 4 and 5.</p>
+</li>
+<li>
+<p>Set the element type to <strong>Bot Response</strong>. Once again, either create a new element or select an existing one from the dropdown.</p>
+</li>
+<li>
+<p>Click either the <code>Create element</code> or the <code>Select existing </code> button based on the field you filled.</p>
+</li>
+<li>
+<p>Your Bot Response element is created and appears on the page. Click <code>Save</code> to retain your changes.</p>
+</li>
+<li>
+<p>You can now begin adding examples to your dialogue elements. Click the <code>Add examples</code>button that corresponds to the element you wish to add examples to.</p>
+</li>
+<li>
+<p>A new page, illustrated in the image that follows, is shown, prompting you to add examples for your intent.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-18b-6fd53de08fc693ebdbcf77a36a87155f.png" width="2138" height="498" class="img_ev3q"></p>
+<ol start="15">
+<li>Add as many examples as needed and click <code>Save</code></li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Element examples must be added in all the languages supported by your bot. Use the language tab to toggle between your supported languages when adding examples.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bot-action">Bot Action<a href="#bot-action" class="hash-link" aria-label="Direct link to Bot Action" title="Direct link to Bot Action">​</a></h3>
+<p>Bot actions allow your chatbot to perform certain operations during the dialogue. The bot actions available on our platform are form actions, custom actions, and preset actions.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="form-actions">Form Actions<a href="#form-actions" class="hash-link" aria-label="Direct link to Form Actions" title="Direct link to Form Actions">​</a></h4>
+<p>Form actions collect information (variables) from the user.</p>
+<p>To add a form action to your dialogue:</p>
+<ol>
+<li>
+<p>From the Dialogue Manager page, click the <code>Edit</code> icon corresponding to the dialogue to which you wish to add a form action.</p>
+</li>
+<li>
+<p>Click <code>New dialogue element</code></p>
+</li>
+<li>
+<p>In the pop-up window that appears, ensure the element type is set to Bot Action and the action type is set to Form.</p>
+</li>
+<li>
+<p>Either enter a name for your new form action or select an existing form action from the drop-down menu.</p>
+</li>
+<li>
+<p>Click either the <code>Create element</code> or the <code>Select existing</code> button based on the field you filled.</p>
+</li>
+<li>
+<p>Your Form action element is created and listed on the page. Click <code>Save</code> to retain your changes.</p>
+</li>
+<li>
+<p>You can now begin adding entities to your new form action element. Click the <code>Add Entity</code> button to do this.</p>
+</li>
+<li>
+<p>A pop-up window, illustrated in the image that follows, appears, prompting you to name and configure the new entity.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-19b-529fa885c057c7e2b741d5ffe95ce530.png" width="1166" height="738" class="img_ev3q"></p>
+<ol start="9">
+<li>Fill in the requested information and click <code>Save</code></li>
+</ol>
+<p>The following description list defines the fields found in the Add entity pop-up window.</p>
+<p><strong>Form item name</strong><br>
+<!-- -->This is the name you wish to give your form item.</p>
+<p><strong>Entity type</strong><br>
+<!-- -->This is a dropdown field which allows you to select the type of entity you give your form item. The two entity types available for selection are as follows:</p>
+<ul>
+<li>
+<p>from_text: If this option is selected, the chatbot extracts the user&#x27;s response to the form action via free-form text. In the event your chatbot has ASR capabilities, the user input is extracted from a transcript of the voicenote.</p>
+</li>
+<li>
+<p>from_entity: If this option is selected, you can select the entity you wish to associate with the response to this form action sent by the end user.</p>
+</li>
+</ul>
+<p><strong>Entity</strong><br>
+<!-- -->This field is only visible when the selected entity type is <strong>&quot;from_entity&quot;</strong>. This is a dropdown field from which you can select the entity you wish to associate with the user response.</p>
+<p><strong>Form item request question</strong><br>
+<!-- -->This is the message sent by the chatbot to obtain the information needed from your bot form action. The text in this field must be entered in all the languages supported by your chatbot.</p>
+<p><strong>Present as button</strong><br>
+<!-- -->This field is only visible when the selected entity type is <strong>&quot;from_entity&quot;</strong>. Selecting this checkbox allows you to add buttons to the form request question. The buttons visible to the end user are obtained from the entity examples you set for the selected entities. See the <a href="/docs/Botbuilder#manage-entities">Entities</a> section of this documentation for more information about entity examples.</p>
+<p><strong>Attach role to entity</strong><br>
+<!-- -->This field is only visible when the selected entity type is <strong>&quot;from_entity&quot;</strong>. Selecting this checkbox allows you to attach a role to your selected entity for disambiguation purposes. See the <a href="/docs/Botbuilder#manage-entities">Entities</a> section of this documentation for more information about entity roles.</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="custom-actions">Custom Actions<a href="#custom-actions" class="hash-link" aria-label="Direct link to Custom Actions" title="Direct link to Custom Actions">​</a></h4>
+<p>Custom actions can hit external APIs. Once a custom action has been created, clicking on a language allows you to send a POST or GET request to a webhook endpoint for that language. You also have the option of sending the information collected from forms as part of your payload. At the moment, API responses are limited to plain text only.</p>
+<p>Use the following steps to create a custom action.</p>
+<ol>
+<li>
+<p>From the Dialogue Manager page, click the <code>Edit</code> icon that corresponds to the dialogue to which you wish to add this custom bot action element.</p>
+</li>
+<li>
+<p>Click <code>New dialogue element</code></p>
+</li>
+<li>
+<p>Ensure the element type is set to Bot Action and the action is set to Custom.</p>
+</li>
+<li>
+<p>You have the option of naming and creating a <code>new custom action element</code>, or <code>selecting an existing</code> one from the dropdown.</p>
+</li>
+<li>
+<p>Click either the <code>Create element</code> or the <code>Select existing</code> button based on the field you filled.</p>
+</li>
+<li>
+<p>The element is created and is listed in the Dialogue Manager window.</p>
+</li>
+</ol>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="preset-actions">Preset Actions<a href="#preset-actions" class="hash-link" aria-label="Direct link to Preset Actions" title="Direct link to Preset Actions">​</a></h4>
+<p>Preset actions are preconfigured bot actions which allow your bot to perform certain operations. At present, there are four preset actions available to you on the platform. These are described in the following list.</p>
+<p><em>Human handoff</em></p>
+<p>This preset action triggers a human handoff sequence of the end user to a live agent. To add this element to a dialogue, simply create a preset human handoff dialogue. See the Dialogue Manager section of this documentation for more information on preset dialogues.</p>
+<p><em>Check contact list</em></p>
+<p>This preset action checks if an end user&#x27;s information is available in the Contact List prior to handoff. If the user&#x27;s contact information is not found, your chatbot obtains this information prior to executing a handoff. To add this element to a dialogue, simply create a preset human handoff dialogue. See the Dialogue Manager section of this documentation for more information on preset dialogues.</p>
+<p><em>Change language</em></p>
+<p>This preset action allows your end user to switch between languages during a conversation with the chatbot. To add this element to a dialogue, simply create a preset change language dialogue. See the Dialogue Manager section of this documentation for more information on preset dialogues.</p>
+<p><em>Reset all form items</em></p>
+<p>This preset action clears all the information collected by your chatbot from forms. It is recommended that you add this action to the end of all dialogues that include forms. If this is not done, the forms will retain all previously collected information if the dialogue is triggered again. To add this preset bot action dialogue element:</p>
+<ol>
+<li>
+<p>From the Dialogue Manager page, click the <code>Edit</code> icon that corresponds to the dialogue to which you wish to add this reset element.</p>
+</li>
+<li>
+<p>Click <code>New dialogue element</code></p>
+</li>
+<li>
+<p>Ensure the element type is set to Bot Action and the action is set to Preset.</p>
+</li>
+<li>
+<p>In the preset dropdown field, select the reset_all_form_items option.</p>
+</li>
+<li>
+<p>Click the <code>Select existing</code> button.</p>
+</li>
+<li>
+<p>The element is created and is listed in the Dialogue Manager window.</p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>This reset element will only clear the information from form elements that precede it in placement in the dialogue. As such, it&#x27;s recommended that you place the reset_all_form_items dialogue element after all the form elements in your dialogue. Simply drag and drop the element to change its position in the dialogue.</p></div></div>
+<p><strong>Reset Action</strong></p>
+<p>This bot action element clears the information collected from specific forms. This is useful if you have several form elements in a dialogue but only need the information cleared from certain forms. To add this bot action element to your dialogue:</p>
+<ol>
+<li>
+<p>From the Dialogue Manager page, click the <code>Edit</code> icon that corresponds to the dialogue to which you wish to add this reset element.</p>
+</li>
+<li>
+<p>Click <code>New dialogue element</code></p>
+</li>
+<li>
+<p>Ensure the element type is set to Bot Action and the action is set to Reset.</p>
+</li>
+<li>
+<p>You have the option of naming and creating a new reset element, or selecting an existing one from the dropdown</p>
+</li>
+<li>
+<p>Click either the <code>Create element</code>  or the <code>Select existing</code> button based on the field you filled.</p>
+</li>
+<li>
+<p>The element is created and is listed in the Dialogue Manager window.</p>
+</li>
+<li>
+<p>You can now begin adding entities to your new element by clicking on the <code>Add Element</code> button.</p>
+</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>The entities added here need to match the entities associated with the form action you would like to clear.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="bot-buttons-menu">Bot Buttons (Menu)<a href="#bot-buttons-menu" class="hash-link" aria-label="Direct link to Bot Buttons (Menu)" title="Direct link to Bot Buttons (Menu)">​</a></h3>
+<p>The bot buttons or menu element allows you to add a menu functionality to your chat that gives your users the option of using buttons rather than free-form text.</p>
+<p>Use the following steps to add this element to your dialogue.</p>
+<ol>
+<li>
+<p>From the Dialogue Manager page, click the <code>Edit</code> icon that corresponds to the dialogue to which you wish to add this menu element.</p>
+</li>
+<li>
+<p>Click <code>New dialogue element</code></p>
+</li>
+<li>
+<p>A pop-window, illustrated in the following image, appears, prompting you to fill in the required fields.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-20b-91a9f3e90fcae28efdc420f12b387816.png" width="1176" height="956" class="img_ev3q"></p>
+<ol start="4">
+<li>
+<p>Ensure the element type is set to <strong>Bot Button</strong>.</p>
+</li>
+<li>
+<p>Enter the button group name. This is the collective name you wish to assign to the buttons in this new element.</p>
+</li>
+<li>
+<p>Enter the text you want displayed before the buttons. This text must be entered in all the languages your chatbot supports.</p>
+</li>
+<li>
+<p>Click <code>Create element</code></p>
+</li>
+<li>
+<p>Your new button element is created and listed in your dialogue.</p>
+</li>
+<li>
+<p>You can now begin adding the individual buttons (options) for your new menu element. Click <code>Add</code> button to do this.</p>
+</li>
+<li>
+<p>A pop-window, illustrated in the following image, appears, prompting you to fill in the required fields.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-21b-cfff06edef562453f7f26d0420ac2b28.png" width="770" height="784" class="img_ev3q"></p>
+<ol start="11">
+<li>
+<p>Select the payload type from the drop-down menu.</p>
+<p>a. Selecting from_intent as the payload type prompts you to select the intent your button should be linked to.</p>
+<p>b. Selecting from_faq as the payload type prompts you to select the frequently asked question your button should be linked to. See the FAQ section of this documentation for more information.</p>
+</li>
+<li>
+<p>You have the option of attaching an entity to your button. To do so, select the <code>Attach entity to payload</code> checkbox and choose the entity you would like to attach from the dropdown.</p>
+</li>
+<li>
+<p>Enter the title for your new button in the field provided. This is the text that should be displayed on the button. This text needs to be entered in all the languages your chatbot supports.</p>
+</li>
+<li>
+<p>Click <code>Save</code> . Your new button is now added.</p>
+</li>
+</ol>
+<p><strong>Example</strong></p>
+<p>The following example shows how these dialogue elements can be used together.</p>
+<ol>
+<li>
+<p>A user sends text to the bot. This text is classified as a flight_search intent.</p>
+</li>
+<li>
+<p>The bot then requests two information items from the user: departure_city and arrival_city.</p>
+</li>
+<li>
+<p>The user responds with the requested information.</p>
+</li>
+<li>
+<p>The bot then uses an action to hit an API and send the collected information in the API request. The response from the API is in plain text and displayed to the user.</p>
+</li>
+<li>
+<p>A feedback question is also displayed to the user, along with two buttons that the user can click.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="enable-custom-functions">Enable Custom Functions<a href="#enable-custom-functions" class="hash-link" aria-label="Direct link to Enable Custom Functions" title="Direct link to Enable Custom Functions">​</a></h2>
+<p>Botlhale AI&#x27;s platform allows for a range of custom functions that can be used to tailor and personalise the way your chatbot interacts with the end user. These custom functions are either predefined or customisable. Integrating custom functions on the platform allows you to integrate with third parties, hit endpoints on a server, process specific documents, and much more. These functions not only streamline and enhance the user&#x27;s experience, but also provide you with invaluable insights and increased efficiency.</p>
+<p>Custom functions are configurable and visible on the Actions Dashboard page of Botlhale&#x27;s NLP Toolkit platform. The following image shows a code snippet of a custom action that allows your chatbot to process images.</p>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-22b-9ff96648918bbd5b46aaa189a3f8baee.png" width="2000" height="790" class="img_ev3q"></p>
+<p>The Actions Dashboard also flags any errors in your code, highlighting the erroneous code. You are able to resolve these errors within the Actions Dashboard window. The following screenshots illustrate this.</p>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-23b-16150ad00df227d11d121f1fe3efef0a.png" width="2044" height="904" class="img_ev3q"></p>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-24b-b49fecd1513a459e1b89d6ddf26ad334.png" width="2044" height="952" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>Adding preset or custom bot actions to your dialogue via Dialogue Manager automatically will override any previous related configuration done in the Actions Dashboard. See the section on Bot Action for more information.</p></div></div>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Use the actions dashboard to control who interacts with your chatbot and what features they can access. This allows for a targeted deployment. You can limit the bot to a select group of users, essentially creating a testing pool. This way, you can refine new features with a smaller audience before rolling them out to everyone.</p></div></div>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="human-handoff-integration">Human Handoff Integration<a href="#human-handoff-integration" class="hash-link" aria-label="Direct link to Human Handoff Integration" title="Direct link to Human Handoff Integration">​</a></h3>
+<p>The Botlhale NLP Toolkit has a predefined dialogue that can be selected to enable the human handoff feature. See the Dialogue Manager section of this documentation for information on how to enable this preset dialogue.
+The human handoff dialogue contains the following two dialogue streams:</p>
+<ul>
+<li>provide_handoff_options</li>
+<li>execute_handoff</li>
+</ul>
+<p>These two dialogues work off the shell and do not require any modifications.</p>
+<p>The human handoff capability uses Socket.IO, a library that allows message passing between a server and multiple clients. All chatbots with human handoff set up need to connect to Botlhale AI&#x27;s Socket.IO server.</p>
+<p>The following code snippets can be used to set up socket IO, as well as event listener and emitter functions to interface with Botlhale AI&#x27;s Socket.IO server. The code snippets use JavaScript. However, if your bot is integrated in a non-JavaScript environment, there are several client implementations available in other languages. See the Socket.IO documentation for additional information.</p>
+<div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">script src</span><span class="token operator" style="color:#393A34">=</span><span class="token string" style="color:#e3116c">&quot;https://cdn.socket.io/3.1.3/socket.io.min.js&quot;</span><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">integrity</span><span class="token operator" style="color:#393A34">=</span><span class="token string" style="color:#e3116c">&quot;sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh&quot;</span><span class="token plain"> crossorigin</span><span class="token operator" style="color:#393A34">=</span><span class="token string" style="color:#e3116c">&quot;anonymous&quot;</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">script</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// SOCKET IO initialisation !</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">const</span><span class="token plain"> socket </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> io</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">connect</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;https://app.botlhale.io/live_agent&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token literal-property property" style="color:#36acaa">autoConnect</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// first time connecting to the main socket !</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">on</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;startConversation&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">function</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">emit</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;username&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       </span><span class="token string-property property" style="color:#36acaa">&quot;ConversationID&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token maybe-class-name">ConversationID</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       </span><span class="token string-property property" style="color:#36acaa">&quot;BotID&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token maybe-class-name">BotID</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// receiving a message !</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">on</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;to_user&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">function</span><span class="token punctuation" style="color:#393A34">(</span><span class="token parameter">data</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token keyword" style="color:#00009f">let</span><span class="token plain"> text </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> data</span><span class="token punctuation" style="color:#393A34">.</span><span class="token property-access">message</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token function" style="color:#d73a49">setBotResponse</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">text</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// send messages to clients !</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">on</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;messages&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">function</span><span class="token punctuation" style="color:#393A34">(</span><span class="token parameter">data</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token keyword" style="color:#00009f">let</span><span class="token plain"> messages </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">[</span><span class="token punctuation" style="color:#393A34">]</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token comment" style="color:#999988;font-style:italic">// populate messages variable with user-bot conversation !</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token comment" style="color:#999988;font-style:italic">// each element in the array must have the following format:</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token comment" style="color:#999988;font-style:italic">// {&#x27;sender&#x27;: String, &#x27;message&#x27;: String}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token comment" style="color:#999988;font-style:italic">// if message belongs to the user, then the value of &#x27;sender&#x27; must be &#x27;user&#x27;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token comment" style="color:#999988;font-style:italic">// if message belongs to the bot, then the value of &#x27;sender&#x27; must be &#x27;bot&#x27;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">emit</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;messages_to_client&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       </span><span class="token string-property property" style="color:#36acaa">&quot;messages&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> messages</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       </span><span class="token string-property property" style="color:#36acaa">&quot;bot_id&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token maybe-class-name">BotID</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// disconnecting socket !</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">on</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;disconnect_socket&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">function</span><span class="token punctuation" style="color:#393A34">(</span><span class="token parameter">data</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">disconnect</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> </span><span class="token comment" style="color:#999988;font-style:italic">// Sending a message</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword control-flow" style="color:#00009f">if</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token property-access">connected</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// Send a message to socket </span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   socket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token method function property-access" style="color:#d73a49">emit</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&#x27;from_user&#x27;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       </span><span class="token string-property property" style="color:#36acaa">&quot;message&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> message</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       </span><span class="token string-property property" style="color:#36acaa">&quot;ConversationID&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token maybe-class-name">ConversationID</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">       </span><span class="token string-property property" style="color:#36acaa">&quot;BotID&quot;</span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> </span><span class="token maybe-class-name">BotID</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">   </span><span class="token punctuation" style="color:#393A34">}</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"> </span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"> </span><span class="token keyword control-flow" style="color:#00009f">else</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token comment" style="color:#999988;font-style:italic">// Send a message bot</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="test-virtual-assistant">Test Virtual Assistant<a href="#test-virtual-assistant" class="hash-link" aria-label="Direct link to Test Virtual Assistant" title="Direct link to Test Virtual Assistant">​</a></h2>
+<p>This section outlines the procedures for testing your chatbot once it&#x27;s been created and trained.</p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>It&#x27;s recommended that you open the Test page in a new Tab or Window should you want to browse through the app while you test your chatbot. Leaving the Test page while testing is ongoing will require you to reload the model.</p></div></div>
+<p>You have the option of performing a Quick Test or a Telegram Test for your chatbot. Quick Tests happen within the Botlhale NLP Toolkit platform. With Telegram Tests, you need to have an existing Telegram portal to which to deploy the test. The following subsections outline the procedures for both tests.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="quick-test">Quick Test<a href="#quick-test" class="hash-link" aria-label="Direct link to Quick Test" title="Direct link to Quick Test">​</a></h3>
+<p>Use the following steps to perform a Quick Test on your chatbot.</p>
+<ol>
+<li>
+<p>On the Testing Dashboard, ensure the Quick Test tab is selected.</p>
+</li>
+<li>
+<p>Enter the Model Parameters for your Quick Test. This is the language and model (trained chatbot) you wish to test.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-25b-0d6707c7d32b5d602c73e87ad29ebec3.png" width="2076" height="856" class="img_ev3q"></p>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Like with training, you can only test one model and language at a time.</p></div></div>
+<ol start="3">
+<li>
+<p>Click the <code>Load Model</code> button.</p>
+</li>
+<li>
+<p>Once your model is loaded, a message from your chatbot appears on the Chat Interface, and you can begin interacting with the chatbot.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-26b-cd89a9043f6694102f0687802bf9aa70.png" width="2120" height="912" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="telegram-test">Telegram Test<a href="#telegram-test" class="hash-link" aria-label="Direct link to Telegram Test" title="Direct link to Telegram Test">​</a></h3>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You need a valid bot token to test a chatbot on Telegram Click here to learn how to create a bot on telegram.</p></div></div>
+<p>Use the following steps to test your chatbot on Telegram.</p>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>Telegram testing sessions last for 15 minutes.</p></div></div>
+<ol>
+<li>
+<p>On the Testing Dashboard, ensure the Test on Telegram tab is selected.</p>
+</li>
+<li>
+<p>Enter the Model Parameters and provide a valid Telegram bot token.</p>
+</li>
+<li>
+<p>Click <code>Connect to Telegram</code></p>
+</li>
+<li>
+<p>A green ribbon appears at the top of the Testing Dashboard page, indicating you can begin testing your bot on Telegram.</p>
+</li>
+<li>
+<p>Click the Send icon to begin a testing instance in a new window.</p>
+</li>
+<li>
+<p>You can now begin testing your chatbot on Telegram.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="train-virtual-assistant">Train Virtual Assistant<a href="#train-virtual-assistant" class="hash-link" aria-label="Direct link to Train Virtual Assistant" title="Direct link to Train Virtual Assistant">​</a></h2>
+<p>This section outlines the procedure for training a chatbot with the intents and user examples provided in the previous sections. Training is done with a dataset which comprises many sentences organised into intents. This represents what users say to a chatbot. The training dataset teaches the chatbot to understand a user&#x27;s needs and trigger the right conversation sequence.</p>
+<p>Use the following steps to train your chatbot.</p>
+<ol>
+<li>Ensure the chatbot you wish to train is selected. Use the dropdown menu in the top-right corner of the Botlhale NLP Toolkit site to toggle between chatbots.</li>
+<li>Navigate to the Training Dashboard.</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-27b-9d694c4d20728fadfb6679791bc6dcf7.png" width="2370" height="620" class="img_ev3q"></p>
+<ol start="3">
+<li>Select the language you wish to use to train your chatbot.</li>
+</ol>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>You can only train your chatbot with one language at a time.</p></div></div>
+<ol start="4">
+<li>
+<p>Set the Training Cycle parameter. This parameter indicates the number of times you would like to train your chatbot.</p>
+</li>
+<li>
+<p>Click the <code>Train</code> button. Your chatbot training begins. You can monitor the status of your training in the Saved Models tab.</p>
+</li>
+</ol>
+<p><img decoding="async" loading="lazy" alt="alt text" src="/assets/images/image-28b-2cfa80352e1e7bd6c7003dc714e878b2.png" width="2500" height="844" class="img_ev3q"></p>
+<ol start="7">
+<li>
+<p>Once training is completed, the status changes to <strong>&quot;Done&quot;</strong>. You will also receive an email confirming this.</p>
+</li>
+<li>
+<p>Repeat this process until you have trained your chatbot in all your desired languages.</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="version-virtual-assistant">Version Virtual Assistant<a href="#version-virtual-assistant" class="hash-link" aria-label="Direct link to Version Virtual Assistant" title="Direct link to Version Virtual Assistant">​</a></h2>
+<p>Botlhale&#x27;s NLP Toolkit platform offers versioning capabilities for your chatbots. This gives you the ability to manage and control different versions or iterations of your chatbot, enabling you to manage the evolution of your bot over time.</p>
+<p>You can create a new version of your chatbot from any of the following pages on the platform:</p>
+<ul>
+<li>Intents Manager</li>
+<li>FAQs Manager</li>
+<li>Entities Manager</li>
+<li>Dialogue Manager</li>
+</ul>
+<p>To create a new chatbot version:</p>
+<ol>
+<li>From any of the pages previously listed, click the <code>Save New Version</code> button that features on the top-right corner.</li>
+<li>A pop-up window appears, prompting you to name your version.</li>
+<li>Enter your desired version name and click <code>Create version</code></li>
+<li>Your new chatbot version is created.</li>
+</ol>
+<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>You can toggle between different versions of your chatbot by using the dropdown menu in the top-right corner of any page on the platform.</p></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="contact-us">Contact us<a href="#contact-us" class="hash-link" aria-label="Direct link to Contact us" title="Direct link to Contact us">​</a></h2>
+<div class="theme-admonition theme-admonition-info admonition_xJq3 alert alert--info"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"></path></svg></span>info</div><div class="admonitionContent_BuS1"><p>We are here to help! Please <a href="mailto:support@botlhale.ai" target="_blank" rel="noopener noreferrer">contact us</a> with any questions.</p></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/docs/Live Bots"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Live Bots</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#create-virtual-assistant" class="table-of-contents__link toc-highlight">Create Virtual Assistant</a></li><li><a href="#manage-intents" class="table-of-contents__link toc-highlight">Manage Intents</a><ul><li><a href="#add-intents" class="table-of-contents__link toc-highlight">Add Intents</a></li><li><a href="#upload-intents" class="table-of-contents__link toc-highlight">Upload Intents</a></li><li><a href="#generate-intent-examples" class="table-of-contents__link toc-highlight">Generate Intent Examples</a></li><li><a href="#delete-intents" class="table-of-contents__link toc-highlight">Delete Intents</a></li></ul></li><li><a href="#manage-entities" class="table-of-contents__link toc-highlight">Manage Entities</a><ul><li><a href="#create-entities" class="table-of-contents__link toc-highlight">Create Entities</a></li><li><a href="#tag-entities" class="table-of-contents__link toc-highlight">Tag Entities</a></li><li><a href="#delete-entities" class="table-of-contents__link toc-highlight">Delete Entities</a></li></ul></li><li><a href="#create-faqs" class="table-of-contents__link toc-highlight">Create FAQs</a></li><li><a href="#manage-dialogues" class="table-of-contents__link toc-highlight">Manage Dialogues</a><ul><li><a href="#create-dialogues" class="table-of-contents__link toc-highlight">Create Dialogues</a></li></ul></li><li><a href="#create-dialogue-elements" class="table-of-contents__link toc-highlight">Create Dialogue Elements</a><ul><li><a href="#bot-response" class="table-of-contents__link toc-highlight">Bot Response</a></li><li><a href="#bot-action" class="table-of-contents__link toc-highlight">Bot Action</a></li><li><a href="#bot-buttons-menu" class="table-of-contents__link toc-highlight">Bot Buttons (Menu)</a></li></ul></li><li><a href="#enable-custom-functions" class="table-of-contents__link toc-highlight">Enable Custom Functions</a><ul><li><a href="#human-handoff-integration" class="table-of-contents__link toc-highlight">Human Handoff Integration</a></li></ul></li><li><a href="#test-virtual-assistant" class="table-of-contents__link toc-highlight">Test Virtual Assistant</a><ul><li><a href="#quick-test" class="table-of-contents__link toc-highlight">Quick Test</a></li><li><a href="#telegram-test" class="table-of-contents__link toc-highlight">Telegram Test</a></li></ul></li><li><a href="#train-virtual-assistant" class="table-of-contents__link toc-highlight">Train Virtual Assistant</a></li><li><a href="#version-virtual-assistant" class="table-of-contents__link toc-highlight">Version Virtual Assistant</a></li><li><a href="#contact-us" class="table-of-contents__link toc-highlight">Contact us</a></li></ul></div></div></div></div></main></div></div></div></div>
+</body>
+</html>
