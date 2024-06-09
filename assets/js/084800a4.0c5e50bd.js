@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmurggar_github_io=self.webpackChunkmurggar_github_io||[]).push([[756],{3522:a=>{a.exports=JSON.parse('{"label":"hello","permalink":"/docs-bua/blog/tags/hello","allTagsPath":"/docs-bua/blog/tags","count":2,"unlisted":false}')}}]);
