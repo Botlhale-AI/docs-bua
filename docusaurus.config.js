@@ -11,7 +11,7 @@ const config = {
 
   title: 'Bua',
   // tagline: "The Botlhale NLP Toolkit",
-  url: 'https://botlhale-ai.github.io/docs-bua/',
+  url: 'https://botlhale-ai.github.io/',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -19,7 +19,7 @@ const config = {
   organizationName: 'Botlhale-AI', // Usually your GitHub org/user name.
   projectName: 'docs-bua.github.io', // Usually your repo name.
   deploymentBranch: 'main', 
-  trailingSlash: false,
+  // trailingSlash: false,
 
   presets: [
     [
