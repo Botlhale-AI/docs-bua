@@ -12,12 +12,12 @@ const config = {
   title: 'Bua',
   // tagline: "The Botlhale NLP Toolkit",
   url: 'https://botlhale-ai.github.io/',
-  baseUrl: '/',
+  baseUrl: '/docs-bua/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/ficon.png',
   organizationName: 'Botlhale-AI', // Usually your GitHub org/user name.
-  projectName: 'docs-bua.github.io', // Usually your repo name.
+  projectName: 'docs-bua', // Usually your repo name.
   deploymentBranch: 'gh-pages', 
   // trailingSlash: false,
 
