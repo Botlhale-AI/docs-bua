@@ -58,44 +58,20 @@ const FeatureList = [
 const ytVideos = [
   {
     title: '1. Getting started',
-    videoId: 'O8G7hpGfBmM',
+    videoId: 'gfK94X3gErA',
   },
   {
-    title: '2. Managing Organisations',
-    videoId: 'crwdqdA1oLw',
+    title: '2. Settings',
+    videoId: 'BAG4yVIKQz8',
   },
   {
-    title: '3. Create a bot & managing intents',
-    videoId: 'aqsn22rQETM',
+    title: '3. Live Bots',
+    videoId: 'kr3HcvDw3EM',
   },
   {
-    title: '4. Managing dialogues',
-    videoId: 'jYZUQHF0ElQ',
-  },
-  {
-    title: '5. Training and Testing',
-    videoId: 'EPUGUwNJCRs',
-  },
-  {
-    title: '6.1 How to use Entities',
-    videoId: 'X7DJs47Ycsc',
-  },
-  {
-    title: '6.2 Creating a bot that responds with an entity',
-    videoId: 'wPeY1B1vkIc',
-  },
-  {
-    title: '7. Using buttons',
-    videoId: 'K9NnmlxBBl8',
-  },
-  {
-    title: '8. Collection information using forms',
-    videoId: 'Xs6P80pWpvE',
-  },
-  {
-    title: '9. Hitting endpoints within the conversations',
-    videoId: 'noxVPmrcXfg',
-  },
+    title: '4. Help Desk',
+    videoId: 'SQDojTwvwfQ',
+  },,
 ];
 
 

@@ -11,11 +11,11 @@ const config = {
 
   title: 'Bua',
   // tagline: "The Botlhale NLP Toolkit",
-  url: 'https://botlhale-ai.github.io/', //https://docs.botlhale.xyz/
-  baseUrl: '/docs-bua/',
+  url: 'https://docs.botlhale.xyz', //
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'static/img/favicon.ico',
+  favicon: 'img/ficon.png',
   organizationName: 'Botlhale-AI', // Usually your GitHub org/user name.
   projectName: 'docs-bua', // Usually your repo name.
   deploymentBranch: 'gh-pages', 
@@ -54,7 +54,7 @@ const config = {
         title: 'Bua',
         logo: {
           alt: 'Botlhale AI Logo',
-          src: 'static/img/ficon.png',
+          src: 'img/ficon.png',
         }, 
         items: [          
           {
@@ -65,7 +65,7 @@ const config = {
             href: '/',
             html: `
               <img
-                src="static/img/logo.png"
+                src="img/logo.png"
                 alt="Botlhale AI Logo"
                 class="navbar-logo-custom"
                 style="height: 2rem; margin-right: 1rem; filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.75)); "
