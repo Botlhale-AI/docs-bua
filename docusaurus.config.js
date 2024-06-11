@@ -11,7 +11,7 @@ const config = {
 
   title: 'Bua',
   // tagline: "The Botlhale NLP Toolkit",
-  url: 'https://docs.botlhale.xyz', //
+  url: 'https://docs-bua.botlhale.xyz', //
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -35,7 +35,7 @@ const config = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/murggar/murggar.github.io/edit/main/blog/',
+            'https://docs-bua.botlhale.xyz',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
